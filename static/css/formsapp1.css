@@ -1,0 +1,648 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: hotpink;
+    -webkit-tap-highlight-color: transparent;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+}
+
+
+
+
+
+
+/* 
+font-family: 'Cinzel', serif;
+font-family: 'Pacifico', cursive; */
+
+body{
+    background-color: hotpink;
+}
+
+
+
+
+
+.s4{
+    margin-left:360px;
+    width: 360px;
+    height:auto;
+}
+/********************************** color *******************************************/
+
+
+.pink-txt{
+    color: hotpink;
+}
+
+
+
+
+/********************************** Input tags *******************************************/
+
+input{
+    width:100%;
+    padding: 5px;
+}
+.username{
+    border: none;
+    border-bottom: 2px solid hotpink;
+    outline: none;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: hotpink;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: hotpink;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: hotpink;
+  }
+
+ input:focus{
+    color: black;
+ }
+
+
+
+/********************************** Cards *******************************************/
+.card{
+    
+    width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 3px 3px 1px grey;
+}
+
+.card .card-logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+
+
+.card .card-header{
+    font-size: 35px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.card .card-que{
+    font-size: 25px;
+}
+
+.card .card-content{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card .card-title{
+    font-size: 20px;
+}
+.card .card-link{
+    color:hotpink;
+}
+
+
+
+
+/********************************** DASHBOARD  *******************************************/
+
+.nav-bar{
+    width:300px;
+    background-color: white;
+    height:100vh;
+    text-align: center;
+    position: fixed;
+}
+
+.navbar-links{
+    text-decoration: none;
+    color: hotpink;
+    font-family: 'Noto Sans HK', sans-serif;
+    left: 0;
+   
+    
+}
+
+.nav-logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    color:hotpink;
+    padding: 10px;
+    text-decoration: none;
+    
+}
+
+.nav-link{
+    font-size: 20px;
+    cursor: pointer;
+    list-style-type: none;
+    padding:30px;
+}
+
+.nav-link:hover{
+    background-color: hotpink;
+    color: white;
+}
+
+@media only screen and (max-width : 720px){
+
+    .nav-bar{
+        width:100%;
+        background-color: white;
+        height:auto;
+        
+        
+        
+    }
+    .nav-logo{
+        font-family: 'Pacifico', cursive;
+        font-size: 40px;
+        color:white;
+        padding: 10px;
+        left:10px; 
+        
+        
+    }
+
+    .nav-link{
+        font-size: 20px;
+        cursor: pointer;
+        list-style-type: none;
+        padding:30px;
+        right:10px; 
+        
+        
+    }
+    .nav-link:hover{
+        background-color: hotpink;
+        color: white;
+    }
+
+}
+
+
+
+ /****************** mobile navbar*************************************** */
+/* .nav-bar{
+    width:100%;
+    height:auto;
+    background-color: white;
+}
+.nav-logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    color:hotpink;
+    padding: 10px;
+     left:10px; 
+    
+    
+}
+.nav-link{
+    font-size: 15px;
+
+.s4{
+    margin-left:360px;
+    width: 360px;
+    height:auto;
+}
+/********************************** color *******************************************/
+
+
+.pink-txt{
+    color: hotpink;
+}
+
+/********************************** Input tags *******************************************/
+
+input{
+    width:100%;
+    padding: 5px;
+}
+.username{
+    border: none;
+    border-bottom: 2px solid hotpink;
+    outline: none;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: hotpink;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: hotpink;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: hotpink;
+  }
+
+ input:focus{
+    color: black;
+ }
+
+
+
+/********************************** Cards *******************************************/
+.card{
+    
+    width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 3px 3px 1px grey;
+}
+
+.card .card-logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+
+
+.card .card-header{
+    font-size: 35px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.card .card-que{
+    font-size: 25px;
+}
+
+.card .card-content{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card .card-title{
+    font-size: 20px;
+}
+.card .card-link{
+    color:hotpink;
+}
+
+
+
+
+/********************************** DASHBOARD  *******************************************/
+
+.nav-bar{
+    width:300px;
+    background-color: white;
+    height:100vh;
+    text-align: center;
+    position: fixed;
+}
+
+.navbar-links{
+    text-decoration: none;
+    color: hotpink;
+    font-family: 'Noto Sans HK', sans-serif;
+    left: 0;
+   
+    
+}
+
+.nav-logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    color:hotpink;
+    padding: 10px;
+    
+}
+
+.nav-link{
+    font-size: 20px;
+    cursor: pointer;
+    list-style-type: none;
+    padding:30px;
+}
+
+.nav-link:hover{
+    background-color: hotpink;
+    color: white;
+}
+
+@media only screen and (max-width : 720px){
+
+    .nav-bar{
+        width:100%;
+        background-color: white;
+        height:auto;
+        
+        
+        
+    }
+    .nav-logo{
+        font-family: 'Pacifico', cursive;
+        font-size: 40px;
+        color:white;
+        padding: 10px;
+        left:10px; 
+        
+        
+    }
+
+    .nav-link{
+        font-size: 20px;
+        cursor: pointer;
+        list-style-type: none;
+        padding:30px;
+        right:10px; 
+        
+        
+    }
+    .nav-link:hover{
+        background-color: hotpink;
+        color: white;
+    }
+
+}
+
+
+
+ /****************** mobile navbar*************************************** */
+/* .nav-bar{
+    width:100%;
+    height:auto;
+    background-color: white;
+}
+.nav-logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    color:hotpink;
+    padding: 10px;
+     left:
+    cursor: pointer;
+    list-style-type: none;
+    padding:30px;
+     right:10px; 
+    
+    
+}
+.nav-link:hover{
+    background-color: hotpink;
+    color: white;
+} */
+
+
+
+/******************* Floating button ************************/
+
+.float{
+    text-align: center;
+    font-size: 50px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    right:50px;
+    bottom:50px;
+    background-color: white;
+    color: hotpink;
+}
+/******************* Dashboard Forms cards ************************/
+
+.form-body{
+    width: 720px;
+    display: flex;
+    height:50vh;
+    background-color: white;
+    margin-left: 365px;
+    
+}
+
+
+
+
+/********************************** Input tags *******************************************/
+
+input{
+    width:100%;
+    padding: 5px;
+}
+.username{
+    border: none;
+    border-bottom: 2px solid hotpink;
+    outline: none;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: hotpink;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: hotpink;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: hotpink;
+  }
+
+ input:focus{
+    color: black;
+ }
+
+
+
+/********************************** Cards *******************************************/
+.card{
+    
+    width: 100%;
+    height: auto;
+    background-color: white;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 3px 3px 1px grey;
+}
+
+.card .card-logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+
+
+.card .card-header{
+    font-size: 35px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.card .card-que{
+    font-size: 25px;
+}
+
+.card .card-content{
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card .card-title{
+    font-size: 20px;
+}
+.card .card-link{
+    color:hotpink;
+}
+
+
+
+
+/********************************** DASHBOARD  *******************************************/
+
+.nav-bar{
+    width:100%;
+    background-color: white;
+    height:100vh;
+    text-align: center;
+    position: fixed;
+}
+
+.navbar-links{
+    text-decoration: none;
+    color: hotpink;
+    font-family: 'Noto Sans HK', sans-serif;
+    left: 0;
+   
+    
+}
+
+.nav-logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    color:hotpink;
+    padding: 10px;
+    
+}
+
+.nav-link{
+    font-size: 20px;
+    cursor: pointer;
+    list-style-type: none;
+    padding:30px;
+}
+
+.nav-link:hover{
+    background-color: hotpink;
+    color: white;
+}
+
+@media only screen and (max-width : 720px){
+
+    .nav-bar{
+        width:100%;
+        background-color: white;
+        height:auto;
+        
+        
+        
+    }
+    .nav-logo{
+        font-family: 'Pacifico', cursive;
+        font-size: 40px;
+        color:white;
+        padding: 10px;
+        left:10px; 
+        
+        
+    }
+
+    .nav-link{
+        font-size: 20px;
+        cursor: pointer;
+        list-style-type: none;
+        padding:30px;
+        right:10px; 
+        
+        
+    }
+    .nav-link:hover{
+        background-color: hotpink;
+        color: white;
+    }
+
+}
+
+
+
+ /****************** mobile navbar*************************************** */
+/* .nav-bar{
+    width:100%;
+    height:auto;
+    background-color: white;
+}
+.nav-logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    color:hotpink;
+    padding: 10px;
+     left:
+    cursor: pointer;
+    list-style-type: none;
+    padding:30px;
+     right:10px; 
+    
+    
+}
+.nav-link:hover{
+    background-color: hotpink;
+    color: white;
+} */
+
+
+
+/******************* Floating button ************************/
+
+.float{
+    text-align: center;
+    font-size: 50px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    right:50px;
+    bottom:50px;
+    background-color: white;
+    color: hotpink;
+}
+/******************* Dashboard Forms cards ************************/
+
+.form-body{
+    width: 720px;
+    display: flex;
+    height:50vh;
+    background-color: white;
+    margin-left: 365px;
+    
+}
+
+
+
+
+
+
+

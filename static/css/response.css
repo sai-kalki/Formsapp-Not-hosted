@@ -1,0 +1,453 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: hotpink;
+    font-size: 30px;
+    -webkit-tap-highlight-color: transparent;
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.formsapp{  
+    width: 100%;
+    height: 100%;
+
+}
+
+
+
+
+/***************************** Navbar Ends ***********************************/
+
+.disabled{
+    display: none;
+}
+
+
+
+
+
+
+.content{
+    display: flex;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 0;
+    padding-left: 1%;
+    padding-right: 1%;
+    flex-direction: column;
+    flex: 0 1 720px;
+    justify-content: flex-start;
+
+}
+.content .header {
+    display: flex;
+    flex: 1;
+    min-height: 8vh;
+    align-items: center;
+    justify-content: space-around;
+}
+.content .header .mob-nav-logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding: 0px;
+    cursor: pointer;
+}
+.content .header .mob-nav-logo a{
+    color:white;
+    text-decoration: none;
+}
+
+.content .header .mob-nav-links{
+    display: flex;
+    width: 40%;
+    margin-top: 10px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.content .header .mob-nav-links li{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.content .header .mob-nav-links li a{
+    color: white;
+    font-size: large;
+}
+
+
+
+
+.content .form-content{
+    
+    flex: 6;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    flex-direction: column;
+    font-size: medium;
+}
+
+.content .form-content .form{
+    width: 100%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    height: auto;
+    min-height: 80px;
+    margin-top: 2%;
+    background-color: white;
+    text-align: center;
+    /* flex: 0 1 150px; */
+}
+.content .form-content .form .question-head{
+    text-align: left;
+}
+.content .form-content .form .question{
+    /* text-transform: uppercase; */
+    margin-top: 1%;
+    margin-bottom: 3%;
+    margin-left: 30px;
+    margin-right: 30px;
+    color: hotpink;
+    /* color: black; */
+    font-size: large;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+.content .form-content .form .break{
+    width: 100%;
+    height: 1px;
+    background-color: hotpink;
+    /* opacity: 50%; */
+}
+
+.content .form-content .form .clear button{
+    border: none;
+    font-size: medium;
+    color: hotpink;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+
+
+.content .form-content .form .options{
+    margin-top: 35px;
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
+.content .form-content .form .options label{
+    font-size: large;
+    margin-left: 20px;
+    color: black !important; 
+    cursor: pointer;
+}
+
+.content .form-content .form .options input[type=submit]{
+    height: 15px;
+    width:15px;
+    cursor: pointer;   
+}
+.content .form-content .form .options input[type=text]{
+    width: 50% !important;
+    
+}
+
+
+
+.content .btnbar{
+    color: white;
+    text-align: center;
+    flex: 0 0 50px;
+    margin-top: auto;
+    margin-bottom: 30px;
+    
+}
+.btnbar button{
+    color: white;
+    padding: 10px;
+    width: 25%;
+    text-decoration: none;
+    background-color: transparent;
+    border: 3px solid white;
+    font-size: large;
+    font-family: 'Noto Sans HK', sans-serif;
+    outline: none;
+}
+.btnbar button:hover{
+    color: hotpink;
+    background-color: white;
+}
+
+.btnbar button:active{
+    color: white;
+    background-color: hotpink;
+}
+
+
+
+.timer-bar{
+    position: sticky;
+    top: 10px;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+.timer{
+    position: absolute;
+    top:40px;
+    right: 10px;
+    font-size: x-large;
+    background-color: white;
+    padding: 2px 20px;
+    color: hotpink;
+}
+
+@media only screen and (max-width: 1440px) {
+    .content{
+        margin-left: 200px;  
+        margin-right: 200px;
+    } 
+    .content .header{
+        display: flex;
+    } 
+
+    }
+@media only screen and (max-width: 1024px) {
+    .content{
+        margin-left: 100px;
+        margin-right: 100px;
+    } 
+    .content .header{
+        display: flex;
+    } 
+    .content .form-content .form .options{
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .timer-bar{
+        top: 5px;
+    }
+    .timer{
+        font-size: x-large;
+    }
+    }
+@media only screen and (max-width: 768px) {
+    .content{
+        margin-left: 50px;
+        margin-right: 50px;
+} 
+.content .form-content .form .options{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.timer-bar{
+    top: 15px;
+}
+.timer{
+    font-size: medium;
+}
+}
+@media only screen and (max-width: 600px) {
+.content{
+        margin-left: 5px;
+        margin-right: 5px;    
+} 
+.btnbar button{
+    width: 50%;
+} 
+.content .form-content .form .question{
+    font-size: medium;
+}
+.content .form-content .form .options{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.content .form-content .form .options label{
+    margin-left: 10px;
+    font-size: medium;
+}
+.timer-bar{
+    top: 20px;
+}
+.timer{
+    font-size: small;
+}
+}
+
+
+.fail{
+    margin-bottom: 20px;
+    border: 2px solid red;
+}
+
+
+/************************ Checkbox *************************/
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: hotpink;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:before {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:before {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:before {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+
+
+
+/************************ radio *************************/
+
+
+
+  .rcontainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .rcontainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom radio button */
+  .rcheckmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .rcontainer:hover input ~ .rcheckmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .rcontainer input:checked ~ .rcheckmark {
+    background-color: hotpink;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .rcheckmark:before {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .rcontainer input:checked ~ .rcheckmark:before {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .rcontainer .rcheckmark:before {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+
+
+
+
+  @media(hover:hover){
+    .btnbar button:hover{
+        color: hotpink;
+        background-color: white;
+    }
+}
+
+@media(hover:none){
+    .btnbar button:hover{
+        color: white;
+        background-color: hotpink;
+    }
+    
+}

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../static/css/formcreate.css">
+    <link rel="stylesheet" href="../static/css/input.css"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/formcreate.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/input.css')}}">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/9dfac6ea88.js" crossorigin="anonymous"></script>
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Noto+Sans+HK&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Create your form</title>
+</head>
+<body>
+
+    <div class="formsapp">
+
+        <div class="menu">
+            <div class="nav-bar">
+                <a href="{{url_for('dashboard')}}"><div class="nav-logo">Formsapp</div></a>
+                <div class="navbar-links">
+                <a href="{{url_for('dashboard')}}"><li class="nav-link">Dashboard</li></a>
+                <a href="{{url_for('acc')}}"><li class="nav-link">MyAccount</li></a>
+                <a href="{{url_for('logout')}}"><li class="nav-link">Logout</li></a>
+                </div>
+             </div>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div class="mob-nav-logo"><a href="{{url_for('dashboard')}}">Formsapp</a></div>
+                <ul class="mob-nav-links">
+                    <li><a href="{{url_for('dashboard')}}"><i class="fas fa-home"></i></a></li>
+                    <li><a href="{{url_for('acc')}}"><i class="fas fa-user-circle"></i></a></li>
+                     <!-- <li><a href="#"><i class="fas fa-bell"></i></a></li>  -->
+                    <li><a href="{{url_for('logout')}}"><i class="fas fa-sign-out-alt"></i></a></li>  
+                </ul> 
+            </div>
+            <div class="form-content">
+                <form method="POST">
+        {%if invalid == True %}
+                    <div class="invalid">Sorry Can't allow you to access this form<br>You don't own this form</div>
+        {% else %}
+                    {% if valid == True %}
+                        <div class="form-title">
+                            <div class="input-fields">
+                            <label for="form-title">Title of the form</label>
+                            <input type="text" name="title" id="form-title" value="{{info['title']}}">
+                            </div>
+                        </div>
+                        <div class="form-header">
+                            <div class="input-fields">
+                                <label for="Qcount">Number of Questions</label>
+                                <input type="number" name="qcount" id="Qcount" value="{{info['count']}}" readonly>
+                            </div>
+                            <div class="input-fields">
+                                <label for="time">Maximum time to submit response(in minutes)</label>
+                                <input type="number" name="mtime" id="time" value="{{info['time']}}">
+                            </div>
+                        </div>
+                        <div class="forms">
+                        {% for question in info["questions"] %}
+                        <div class="form" id="form-{{question['no']}}">
+                            <div class="input-fields">
+                                <label for="question-{{question['no']}}" id="qlabel-{{question['no']}}">Question No.{{question['no']}}</label>
+                                <textarea name="question" id="question-{{question['no']}}" cols="30" rows="3">{{question['question']}}</textarea>
+                            </div>
+                
+                            <div class="input-fields" style="text-align: center;">
+                                <input type="radio" name="question-type-{{question['no']}}"  id="question-type-{{question['no']}}-1" value="Single" {{question['check1'][0]}}>
+                                <label>Single Answer</label>
+                                <!-- <label class="container">Single Answer
+                                    <input type="radio" name="question-type-{{question['no']}}"  id="question-type-{{question['no']}}-1" value="Single" {{question['check1'][0]}}>
+                                    <span class="checkmark"></span>
+                                </label> -->
+                                <input type="radio" name="question-type-{{question['no']}}" id="question-type-{{question['no']}}-2" value="Multiple" {{question['check1'][1]}}>
+                                <label>Multiple Answers</label>
+                                <!-- <label class="container">Multiple Answers
+                                    <input type="radio" name="question-type-{{question['no']}}" id="question-type-{{question['no']}}-2" value="Multiple" {{question['check1'][1]}}>
+                                    <span class="checkmark"></span>
+                                </label> -->
+                            </div>
+                
+                            <div class="input-fields" style="text-align: center;">
+                                <div>Required answer or not? :
+                                <input type="radio" name="required-{{question['no']}}" id="req-{{question['no']}}-1" class="req" value="yes" {{question['check2'][0]}}>
+                                <label>Yes</label>
+                                <!-- <label class="container">Yes
+                                    <input type="radio" name="required-{{question['no']}}" id="req-{{question['no']}}-1" class="req" value="yes" {{question['check2'][0]}}>
+                                    <span class="checkmark"></span>
+                                </label> -->
+                                <input type="radio" name="required-{{question['no']}}" id="req-{{question['no']}}-2" class="req" value="no"{{question['check2'][1]}}>
+                                <label>No</label>
+                                <!-- <label class="container">No
+                                    <input type="radio" name="required-{{question['no']}}" id="req-{{question['no']}}-2" class="req" value="no"{{question['check2'][1]}}>
+                                    <span class="checkmark"></span>
+                                </label> -->
+                                </div>
+                            </div>
+                            
+                            <div class="input-fields options-{{question['no']}}" id="options-{{question['no']}}">
+                            {% for num in range(question['options']|length) %}
+                                <label id="label-{{question['no']}}-{{num+1}}">Option-{{num+1}}</label> 
+                                <input type="text" name="option-{{question['no']}}" class="option-{{num}}" id="option-{{question['no']}}-{{num+1}}" value="{{question['options'][num]}}"> 
+                            {% endfor %}
+                            </div>
+                            <br>
+                            <button type="button" id="addop-{{question['no']}}" onclick="createop({{question['no']}},{{(question['options']|length)+1}})" style="width: 47%;">Add an option</button>
+                            <button type="button" id="delop-{{question['no']}}" onclick="deleteop({{question['no']}},{{question['options']|length}})" style="width: 47%">Delete option</button>
+                
+                            <div class="input-fields correct">
+                                <label>Enter Correct answer(Separate with '|' for many answers)</label>
+                                <input type="text" name="correct" id="correct-{{question['no']}}" value="{{question['correct']}}">
+                            </div>
+                            <button type="button" onclick="deleteq({{question['no']}})" id="delq-{{question['no']}}" style="width: 97%;">Delete Question</button>
+                        </div>  
+                            
+                    {% endfor %}
+                    </div>
+                    <div class="end-btn">
+                        <button type="submit" id="savebtn"  style="width: 47%;">Save</button>
+                        <button type="button" onclick="window.location.href='{{url_for('get',formid=info['_id'])}}'" id="responses" style="width: 47%">Get Responses</button>
+                    </div>
+                    <div class="btnbar">
+                        <button type="button" id="addQ" onclick="createq({{info['questions']|length}}+1)">+ &nbsp Add a question</button>
+                     </div>
+                 </div>
+            </div>
+                    {% else %}
+                        <div class="form-title">
+                            <div class="input-fields">
+                            <label for="form-title">Title of the form</label>
+                            <input type="text" name="title" id="form-title" value="Title of the form">
+                            </div>
+                        </div>
+                        <div class="form-header">
+                            <div class="input-fields">
+                                <label for="Qcount">Number of Questions</label>
+                                <input type="number" name="qcount" id="Qcount" value="1" readonly>
+                            </div>
+                            <div class="input-fields">
+                                <label for="time">Maximum time to submit response(in minutes)</label>
+                                <input type="number" name="mtime" id="time" value="60">
+                            </div>
+                        </div>
+                        <div class="forms">
+                        <div class="form" id="form-1">
+                            <div class="input-fields">
+                                <label for="question-1" id="qlabel-1">Question No.1</label>
+                                <textarea name="question" id="question-1" cols="30" rows="3"></textarea>
+                            </div>
+                
+                            <div class="input-fields" style="text-align: center;">
+                                <input type="radio" name="question-type-1"  id="question-type-1-1" value="Single" checked="checked">
+                                <label>Single Answer</label>
+                                <input type="radio" name="question-type-1" id="question-type-1-2" value="Multiple">
+                                <label>Multiple Answers</label>
+                            </div>
+                
+                            <div class="input-fields" style="text-align: center;">
+                                <div>Required answer or not? :
+                                <input type="radio" name="required-1" id="req-1-1" class="req" value="yes" checked="checked">
+                                <label>Yes</label>
+                                <input type="radio" name="required-1" id="req-1-2" class="req" value="no">
+                                <label>No</label>
+                                </div>
+                            </div>
+                
+                            <div class="input-fields options-1" id="options-1">
+                                <label id="label-1-1">Option-1</label> 
+                                <input type="text" name="option-1" class="option-1" id="option-1-1" value="Option-1"> 
+                            </div>
+                            <br>
+                            <button type="button" id="addop-1" onclick="createop(1,2)" style="width: 47%;">Add an option</button>
+                            <button type="button" id="delop-1" onclick="deleteop(1,1)" style="width: 47%">Delete option</button>
+                
+                            <div class="input-fields correct">
+                                <label>Enter Correct answer(Separate with '|' for many answers)</label>
+                                <input type="text" name="correct" id="correct-1" value="null">
+                            </div>
+                            <button type="button" onclick="deleteq(1)" id="delq-1" style="width: 97%;">Delete Question</button>
+                        </div>  
+                        </div>        
+                        <div class="end-btn">
+                            <button type="submit" id="savebtn"  style="width: 47%;">Save</button>
+                            <button type="button" href="#" id="responses" style="width: 47%">Get Responses</button>
+                        </div>
+                        <div class="btnbar">
+                            <button type="button" id="addQ" onclick="createq(2)">+ &nbsp Add a question</button>
+                         </div>
+                    </div>
+                </div>
+                    {% endif %}
+                        
+                </form>
+
+            </div>
+        {%endif%}
+            
+    <!-- <script src="../static/js/formsapp.js"></script> -->
+    <script src="{{url_for('static',filename='js/formsapp.js')}}"></script>
+</body>
+</html>

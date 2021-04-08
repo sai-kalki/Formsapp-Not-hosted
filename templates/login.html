@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Own Css -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/login.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/input.css')}}">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Noto+Sans+HK&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Signup/Login into your account</title>
+</head>
+<body>
+    <div class="login">
+    <div class="login-logo">
+        Formsapp
+    </div>
+
+    <div class="login-card">
+        <div class="login-card-logo">Formsapp</div>
+        <div class="login-card-header">Login into your account</div>
+        <div class="user-content">
+            <p style="color: red;font-family:'Trebuchet MS', Arial, sans-serif;text-align:center">{{flash}}</p>
+            <form method="POST">
+            <div class="input-fields">
+                <label>Username</label>
+             <input type="text" name="username" id="username" required>
+             <p style="color: red;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">{{uflash}}</p>
+            </div>
+            <div class="input-fields">
+                <label>Password</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="register"><a href="{{url_for('forgot')}}">Forgot Password ?</a></div>
+            <div class="register">Haven't Registered yet? <a href="{{url_for('register')}}">Register here!</a></div>
+            <div class="input-fields" style="text-align: center;">
+                <input type="submit" value="Login">
+
+            </div>
+            <br><br><br><br>
+        </div>
+            </form>
+    </div>
+    </div>
+
+
+
+
+
+<script src="{{url_for('static',filename='js/formsapp.js')}}"></script>
+<!-- <script src="../static/js/formsapp.js"></script> -->
+</body>
+</html>

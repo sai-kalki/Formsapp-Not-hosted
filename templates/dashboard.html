@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../static/css/dashboard.css"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/dashboard.css')}}">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Noto+Sans+HK&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+         <!-- fontawesome -->
+         <script src="https://kit.fontawesome.com/9dfac6ea88.js" crossorigin="anonymous"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <div class="formsapp">
+
+        <div class="menu">
+                <div class="nav-bar">
+                    <a href="{{url_for('dashboard')}}"><div class="nav-logo">Formsapp</div></a>
+                    <div class="navbar-links">
+                    <a href="{{url_for('dashboard')}}"><li class="nav-link">Dashboard</li></a>
+                    <a href="{{url_for('acc')}}"><li class="nav-link">MyAccount</li></a>
+                    <a href="{{url_for('logout')}}"><li class="nav-link">Logout</li></a>
+                    </div>
+                 </div>
+        </div>
+        <div class="content">
+            <div class="header">
+                    <div class="mob-nav-logo"><a href="{{url_for('dashboard')}}">Formsapp</a></div>
+                    <ul class="mob-nav-links">
+                        <li><a href="{{url_for('dashboard')}}"><i class="fas fa-home"></i></a></li>
+                        <li><a href="{{url_for('acc')}}"><i class="fas fa-user-circle"></i></a></li>
+                         <!-- <li><a href="#"><i class="fas fa-bell"></i></a></li>  -->
+                        <li><a href="{{url_for('logout')}}"><i class="fas fa-sign-out-alt"></i></a></li>  
+                    </ul> 
+            </div>
+            <div class="form-content">
+                {% if valid == True%}
+                {% for x in titles %}
+                <div class="form">
+                    <div class="title"><a href="{{url_for('form',formid=x['link'])}}">{{x['title']}} &nbsp&nbsp</i></a>
+                    <a href="{{url_for('formdelete',formid=x['link'])}}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    <a title="Download Responses" href="{{url_for('get',formid=x['link'])}}"><i class="fas fa-download"></i></a>
+                    </div>
+                    <a class="formlink" title="Copy Text" href="http://formsappp.herokuapp.com/respond/{{x['link']}}" target="_blank">Click to Preview / Share this link : http://formsappp.herokuapp.com/respond/{{x['link']}}</a>
+                    <div class="share-links">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{x['link']}}&t=<TITLE>" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Facebook">
+                            <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                        </a>
+                        <a href="whatsapp://send?text=http://formsappp.herokuapp.com/respond/{{x['link']}}" data-action="share/whatsapp/share" onClick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on whatsapp">
+                            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                        <a href="mailto:?subject=[SUBJECT]&body={{x['link']}}" onClick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Mail">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+                {%endif%}
+
+               
+            </div>
+            <div class="btnbar">
+                <button onclick="window.location.href='{{url_for('formcreate')}}'" type="button" class="addForm">+ Create a New Form</button>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="../static/js/formsapp.js"></script> -->
+    <script src="{{url_for('static',filename='js/formsapp.js')}}"></script>
+</body>
+</html>

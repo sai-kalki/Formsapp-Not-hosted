@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.input-fields{
+    margin-top: 25px;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* margin-bottom: 25px; */
+    
+}
+
+.input-fields input[type = text],input[type = password],input[type = number],textarea,input[type= email]{
+    border: 1px solid hotpink;
+    width: 96%;
+    font-family: 'Roboto', sans-serif;
+    font-size: medium;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    padding: 10px 0;
+}
+
+
+.input-fields input[type = text]:focus{
+    background-color: transparent;
+}
+.input-fields input[type = radio]{
+    color: hotpink;
+}
+
+
+
+.input-fields label{
+    color: hotpink;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+
+.input-fields input[type=submit]{
+    border: none;
+    width: 40%;
+    margin: 1%;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: hotpink;
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+    color: white;
+    outline: none;
+    border: 1px solid hotpink;
+}
+
+.input-fields input[type=submit]:hover{
+    background-color: white;
+    color: hotpink;
+    border: 1px solid hotpink;
+    
+}
+.input-fields input[type=submit]:active{
+    background-color: hotpink;
+    color: white;    
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>Js
+    </title>
+        <!-- <link rel="stylesheet" href="../static/css/input.css"> -->
+        <link rel="stylesheet" href="{{url_for('static',filename='css/input.css')}}">
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Noto+Sans+HK&display=swap" rel="stylesheet">
+        <title>Js function</title>
+</head>
+<body>
+
+<div class="form-content">
+    <div class="form-type"></div>
+    <div class="form-head"></div>
+    <div class="form-question">
+        <div class="form">
+            <div class="Qcount">
+                Number of questions : <input type="number" name="Qcount" id="Qcount" value="1">
+            </div>
+            <div class="timer" >Timer for the form : <input type="number" name="timer" id="timer" value="30">(in minutes)</div>
+            <div>Clock -<div id="clock"></div></div>
+            <button onclick="test()">test</button>
+            <br><br><br>
+             <form>
+                <div class="form-1">
+                    <div class="input-fields question-1">
+                        <label>Enter your question</label>
+                        <input type="text" name="question-1" id="question-1" name="question-1" value="question-1">
+                    </div>
+                    <div class="input-fields question-type">
+                        
+                        <input type="checkbox" name="question-type-1" id="question-type" class="question-type" value="Single">
+                        <label for="question-type">Single</label>
+                        <div class="radio"></div>
+                        
+                        <input type="radio" name="question-type-1" class="question-type" value="Multiple">
+                        <label>Multiple</label>
+                    </div>
+                    <div class="input-fields options-1">
+                        <label>Enter your options:</label><br>
+                        <input type="text" name="option-1" class="option-1-1" value="option-1">
+                        <button type="button" class="option-1-1" onclick="deleteop('1-1')">Delete</button>
+                    </div>
+                    <button type="button" onclick="createop(1)">Add a option</button>
+                    <div class="input-fields correct">
+                        <label>Enter Correct answer</label>
+                        <input type="text" name="correct-1" id="correct">
+                    </div>
+                    <button type="button" onclick="createq()">Delete Question</button>
+                </div>
+                <button type="button" onclick="createq()">Add a question</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script src="{{url_for('static',filename='js/formsapp.js')}}"></script>
+<!-- <script src="../static/js/formsapp.js"></script> -->
+</body>
+</html>

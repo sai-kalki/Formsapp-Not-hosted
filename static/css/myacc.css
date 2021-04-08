@@ -1,0 +1,277 @@
+
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: hotpink;
+    font-size: 30px;
+    -webkit-tap-highlight-color: transparent;
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.formsapp{  
+    width: 100%;
+    height: 100%;
+
+}
+
+.menu{
+    width: 360px;
+    height: 100vh;
+    top: 0;
+    /* display: none; */
+    position: fixed;
+}
+.nav-bar{
+    width:100%;
+    background-color: white;
+    height:100vh;
+    text-align: center;
+}
+.navbar-links a{
+    text-decoration: none;
+    color: hotpink;
+    font-family: 'Noto Sans HK', sans-serif;
+    left: 0;
+}
+.nav-logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    color:hotpink;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.nav-link{
+    font-size: 20px;
+    cursor: pointer;
+    list-style-type: none;
+    padding:30px;
+}
+
+.nav-link:hover{
+    background-color: hotpink;
+    color: white;
+}
+.nav-link:active{
+    background-color: white;
+    color: hotpink;
+    border: 1px solid hotpink;
+}
+
+
+@media only screen and (max-width: 1024px) {
+.menu{
+    width: 300px;
+} 
+}
+@media only screen and (max-width: 768px) {
+    .menu{
+        width: 260px;
+} 
+}
+@media only screen and (max-width: 600px) {
+    .menu{
+        display: none;
+} 
+}
+
+
+
+
+
+
+/***************************** Navbar Ends ***********************************/
+
+
+
+
+
+
+
+
+.content{
+    display: flex;
+    margin-left: 360px;
+    margin-top: 0;
+    padding-left: 1%;
+    padding-right: 1%;
+    flex-direction: column;
+    flex: 0 1 720px;
+    justify-content: flex-start;
+
+}
+.content .header {
+    display: flex;
+    flex: 1;
+    min-height: 8vh;
+    align-items: center;
+    justify-content: space-around;
+}
+.content .header .mob-nav-logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding: 0px;
+    cursor: pointer;
+}
+.content .header .mob-nav-logo a{
+    color:white;
+    text-decoration: none;
+}
+.content .header .mob-nav-links{
+    display: flex;
+    width: 40%;
+    margin-top: 0px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.content .header .mob-nav-links li{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.content .header .mob-nav-links li a{
+    color: white;
+    font-size: large;
+}
+
+
+
+
+
+
+.content .form-content{
+    background-color: white;
+    /* flex: 6; */
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 0;
+    /* flex-direction: column; */
+    font-size: medium;
+}
+
+.content .form-content .head{
+    text-align: center;
+    font-family: 'Noto Sans HK', sans-serif;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: hotpink;
+    font-size: xx-large;
+    
+}
+
+
+
+
+/* 
+/*
+.content .form-content .form{
+    width: 100%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    height: auto;
+    margin-top: 2%;
+    background-color: white;
+    text-align: center;
+    /* flex: 0 1 150px; 
+}
+.content .form-content .form .title{
+    text-transform: uppercase;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: black;
+    font-size: large;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+
+.content .form-content .form .formlink{
+    text-transform: uppercase;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: small;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+.content .form-content .form .formlink:active{
+    color: hotpink;
+} */
+
+.input-fields input[type=button]{
+    border: none;
+    width: 40%;
+    margin: 1%;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: hotpink;
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+    color: white;
+    outline: none;
+    border: 1px solid hotpink;
+}
+
+.input-fields input[type=button]:hover{
+    background-color: white;
+    color: hotpink;
+    border: 1px solid hotpink;
+    
+}
+.input-fields input[type=button]:active{
+    background-color: hotpink;
+    color: white;    
+}
+
+
+@media only screen and (max-width: 2500px) {
+    .content{
+        margin-left: 360px;  
+    } 
+    .content .header{
+        display: none;
+    } 
+}
+
+@media only screen and (max-width: 1440px) {
+    .content{
+        margin-left: 360px;  
+    } 
+    .content .header{
+        display: none;
+    } 
+    }
+@media only screen and (max-width: 1024px) {
+    .content{
+        margin-left: 300px;
+    } 
+    .content .header{
+        display: none;
+    } 
+    }
+@media only screen and (max-width: 768px) {
+    .content{
+            margin-left: 260px;
+} 
+.content .header{
+    display: none;
+} 
+}
+@media only screen and (max-width: 600px) {
+    .content{
+        margin-left: 0px;
+        
+} 
+.content .header{
+    display: flex;
+} 
+}

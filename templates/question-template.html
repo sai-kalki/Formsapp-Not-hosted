@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form demo
+    </title>
+    <!-- <link rel="stylesheet" href="../static/css/template.css">
+    <link rel="stylesheet" href="../static/css/input.css"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/input.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/template.css')}}">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Noto+Sans+HK&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Noto+Sans+HK&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="form-content">
+        <form>
+        <div class="form-title">
+            <div class="input-fields">
+            <label for="form-title">Title of the form</label>
+            <input type="text" name="title" id="form-title" value="Title of the form">
+            </div>
+        </div>
+        <div class="form-header">
+            <div class="input-fields">
+                <label for="Qcount">Number of Questions</label>
+                <input type="number" name="Qcount" id="Qcount" value="1" disabled>
+            </div>
+            <div class="input-fields">
+                <label for="time">Maximum time to submit response(in minutes)</label>
+                <input type="number" name="mtime" id="time" value="60">
+            </div>
+        </div>
+        <div class="forms">
+        <div class="form" id="form-1">
+            <div class="input-fields">
+                <label for="question-1" id="qlabel-1">Question No.1</label>
+                <textarea name="question" id="question-1" cols="30" rows="3"></textarea>
+            </div>
+
+            <div class="input-fields" style="text-align: center;">
+                <input type="radio" name="question-type-1"  id="question-type-1-1" value="Single" checked="checked">
+                <label>Single Answer</label>
+                <input type="radio" name="question-type-1" id="question-type-1-2" value="Multiple">
+                <label>Multiple Answers</label>
+            </div>
+
+            <div class="input-fields" style="text-align: center;">
+                <div>Required answer or not? :
+                <input type="radio" name="required-1" id="req-1-1" class="req" value="yes" checked="checked">
+                <label>Yes</label>
+                <input type="radio" name="required-1" id="req-1-2" class="req" value="no">
+                <label>No</label>
+                </div>
+            </div>
+
+            <div class="input-fields options-1" id="options-1">
+                <label id="label-1-1">Option-1</label> 
+                <input type="text" name="option-1" class="option-1" id="option-1-1" value="Option-1"> 
+            </div>
+            <br>
+            <button type="button" id="addop-1" onclick="createop(1,2)" style="width: 47%;">Add an option</button>
+            <button type="button" id="delop-1" onclick="deleteop(1,1)" style="width: 47%">Delete an option</button>
+
+            <div class="input-fields correct">
+                <label>Enter Correct answer(Separate with '|' for many answers)</label>
+                <input type="text" name="correct" id="correct-1" value="null">
+            </div>
+
+            <button type="button" onclick="deleteq(1)" id="delq-1" style="width: 97%;">Delete Question</button>
+        </div>
+        
+       </div>
+       <button type="button" id="addQ" onclick="createq(2)">Add a question</button>
+       </div>
+        </form>
+
+
+    
+    </div>
+    <script src="{{url_for('static',filename='js/formsapp.js')}}"></script>
+    <!-- <script src="../static/js/formsapp.js"></script> -->
+</body>
+</html>

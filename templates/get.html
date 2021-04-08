@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../static/css/formcreate.css">
+    <link rel="stylesheet" href="../static/css/input.css"> -->
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/formcreate.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/input.css')}}">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/9dfac6ea88.js" crossorigin="anonymous"></script>
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Noto+Sans+HK&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Form Submitted</title>
+</head>
+<body>
+
+    <div class="formsapp">
+
+        <div class="menu">
+            <div class="nav-bar">
+                <a href="{{url_for('dashboard')}}"><div class="nav-logo">Formsapp</div></a>
+                <div class="navbar-links">
+                <a href="{{url_for('login')}}"><li class="nav-link">Login</li></a>
+                <a href="{{url_for('register')}}"><li class="nav-link">Register</li></a>
+                </div>
+             </div>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div class="mob-nav-logo"><a href="{{url_for('dashboard')}}">Formsapp</a></div>
+                <ul class="mob-nav-links">
+                    <li><a href="{{url_for('login')}}"><i class="fas fa-sign-in-alt"></i></a></li>
+                    <li><a href="{{url_for('register')}}"><i class="fas fa-user-plus"></i></a></li>  
+                </ul> 
+            </div>
+            <div class="get-content">
+                Be a Formsapp user! <br>Create new forms and get responses<br>Register using the button given below
+                <div class="end-btn">
+                    <button type="button" onclick="window.location.href='{{url_for('register')}}'" id="responses" style="width: 47%">Register</button>
+                </div>
+            </div>
+            
+
+        </div>
+
+    </body>
+</html>

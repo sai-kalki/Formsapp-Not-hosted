@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <link rel="stylesheet" href="{{url_for('static',filename='css/response.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/input.css')}}">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Noto+Sans+HK&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    
+     <!-- fontawesome -->
+     <script src="https://kit.fontawesome.com/9dfac6ea88.js" crossorigin="anonymous"></script>
+    <title>{{title}}</title>
+</head>
+<body onload="timer({{time}})">
+    <div class="formsapp">
+        <div class="timer-bar">
+        <div class="timer">
+            <span id="min"></span><span> Mins</span>
+            <span id="sec"></span><span> Secs</span>
+        </div>
+        </div>
+        
+        <div class="content">
+            <div class="header">
+                    {% if valid==True %}
+                    <div class="mob-nav-logo"><a href="{{url_for('dashboard')}}">Formsapp</a></div>
+                    <ul class="mob-nav-links">
+                    <li><a href="{{url_for('dashboard')}}"><i class="fas fa-home"></i></a></li>
+                    <li><a href="{{url_for('acc')}}"><i class="fas fa-user-circle"></i></a></li>
+                    <li><a href="{{url_for('logout')}}"><i class="fas fa-sign-out-alt"></i></a></li> 
+                    </ul>  
+                    {% else %}
+                    <div class="mob-nav-logo"><a href="{{url_for('dashboard')}}">Formsapp</a></div>
+                    {%endif%}
+            </div>
+            <div class="form-content">
+                <form method="POST" name="myform" onsubmit="return validate()">
+                <div class="form" id="Response-id">
+                    <div class="question question-head">
+                        Enter your Responder Id:
+                    </div>
+                    <div class="break"></div>
+                    <div class="input-fields">
+                        <input type="text" style="width: 47%;" name="resp-id" id="resp-id" class="resp-id" required >
+                    </div>
+                </div>
+                <div class="form">
+                    <br>
+                    <div class="question question-head" style="text-align: center;">
+                        (<span style="color:red;font-size:medium;text-align:right">*</span>) - Mandotary question and Must be answered 
+                    </div>
+                </div>
+
+                {% for x in range(rforms|length) %}
+                <div class="form" onmousedown="return false" onselectstart="return false">
+                    <div class="question">
+                        
+                        {{rforms[x][0]}}
+                        {%if rforms[x][2]=='true'%}<span style="color:red;font-size:medium;text-align:right">*</span>{%endif%}
+                        
+                    </div>
+                    <div class="break"></div>
+                    {%if rforms[x][1] == "checkbox"%}
+                    <div class="options {%if rforms[x][2]=='true'%}required{%endif%}">
+                        <p id="mention" style="color:red;font-size:medium;text-align:center;display:none">Please select any answer</p>
+                        {%for i in range(rforms[x][3]|length)%}
+                        <div class="input-fields">
+                            <!-- <input type="{{rforms[x][1]}}" onclick="choice({{x+1}})" name="option-{{x+1}}" id="option-{{x+1}}-{{i}}" value="{{rforms[x][3][i]}}" class="option option-{{x+1}}" >
+                            <label for="option-{{x+1}}-{{i}}">{{rforms[x][3][i]}}</label> -->
+                            <label class="container">{{rforms[x][3][i]}}
+                                <input type="{{rforms[x][1]}}" onclick="choice({{x+1}})" name="option-{{x+1}}" id="option-{{x+1}}-{{i}}" value="{{rforms[x][3][i]}}" class="option option-{{x+1}}" >
+                                <span class="checkmark"></span>
+                              </label>
+                        </div>
+                        {%endfor%}
+                    </div>
+                    {%else%}
+                    <div class="options {%if rforms[x][2]=='true'%}required{%endif%}">
+                        <p id="mention" style="color:red;font-size:medium;text-align:center;display:none">Please select any answer</p>
+                        {%for i in range(rforms[x][3]|length)%}
+                        <div class="input-fields">
+                            <!-- <input type="{{rforms[x][1]}}" onclick="choice({{x+1}})" name="option-{{x+1}}" id="option-{{x+1}}-{{i}}" value="{{rforms[x][3][i]}}" class="option-{{x+1}}" {%if rforms[x][2]=="true"%}required{%endif%}>
+                            <label for="option-{{x+1}}-{{i}}">{{rforms[x][3][i]}}</label> -->
+                            <label class="rcontainer">{{rforms[x][3][i]}}
+                                <input type="{{rforms[x][1]}}"  onclick="choice({{x+1}})" name="option-{{x+1}}" id="option-{{x+1}}-{{i}}" value="{{rforms[x][3][i]}}" class="option option-{{x+1}}" >
+                                <span class="rcheckmark"></span>
+                              </label>
+                        </div>
+                        {%endfor%}
+                    </div>
+                    {%endif%}
+                    <div class="clear disabled" id="clear-{{x+1}}">
+                        <button type="button" onclick="check({{x+1}})">Clear the choice</button>
+                    </div>
+                </div>
+
+                {%endfor%}
+
+                
+               
+            </div>
+            <div class="btnbar">
+                <button  type="submit"  class="addForm">Submit Form</button>
+            </div>
+        </div>
+    </div>
+    </form>
+    <!-- <script src="../static/js/response.js"></script> -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{{url_for('static',filename='js/response.js')}}"></script>
+    
+</body>
+</html>

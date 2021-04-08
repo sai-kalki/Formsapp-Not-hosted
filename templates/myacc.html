@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../static/css/myacc.css">
+    <link rel="stylesheet" href="../static/css/input.css"> -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/myacc.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/input.css')}}">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/9dfac6ea88.js" crossorigin="anonymous"></script>
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Noto+Sans+HK&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>My Account</title>
+</head>
+<body>
+
+    <div class="formsapp">
+
+        <div class="menu">
+                <div class="nav-bar">
+                    <a href="{{url_for('dashboard')}}"><div class="nav-logo">Formsapp</div></a>
+                    <div class="navbar-links">
+                    <a href="{{url_for('dashboard')}}"><li class="nav-link">Dashboard</li></a>
+                    <a href="{{url_for('acc')}}"><li class="nav-link">MyAccount</li></a>
+                    <a href="{{url_for('logout')}}"><li class="nav-link">Logout</li></a>
+                    </div>
+                 </div>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div class="mob-nav-logo"><a href="{{url_for('dashboard')}}">Formsapp</a></div>
+                <ul class="mob-nav-links">
+                    <li><a href="{{url_for('dashboard')}}"><i class="fas fa-home"></i></a></li>
+                    <li><a href="{{url_for('acc')}}"><i class="fas fa-user-circle"></i></a></li>
+                     <!-- <li><a href="#"><i class="fas fa-bell"></i></a></li>  -->
+                    <li><a href="{{url_for('logout')}}"><i class="fas fa-sign-out-alt"></i></a></li>  
+                </ul> 
+            </div>
+
+            <div class="form-content">
+                
+                <div class="user-content" >
+                    <form method="POST">
+                    <div class="head">My Account Details</div>
+                    <p style="color: red;font-family:'Trebuchet MS', Arial, sans-serif;text-align:center">{{uflash}}</p>
+                    <div class="input-fields">
+                        <label>Email</label>
+                     <input type="email" name="email" id="email" value="{{mail}}" disabled required>
+                    </div>
+                    <div class="input-fields">
+                        <label>Username</label>
+                     <input type="text" name="username" id="username" value="{{uname}}" disabled required>
+                    </div>
+                    <div class="input-fields">
+                        <label>Password</label>
+                        <input type="password" name="password" id="password" value="{{passw}}" disabled required>
+                    </div>
+                    <p style="color: red;font-family:'Trebuchet MS', Arial, sans-serif;">{{flash}}</p>
+                    <div class="input-fields" id="confp" style="display: none;">
+                        <label>Confirm Password</label>
+                        <input type="password" name="confirm" id="confirm" value="" disabled required>
+
+                    </div>
+                    
+                    <div class="input-fields" style="text-align: center; margin-bottom:7%">
+                        <input type="button" onclick="abled()" value="Edit Details">
+                        <input type="submit" id="save" value="Save" disabled>
+                    </div>
+                </div>
+                    </form>
+               
+            </div>
+
+
+
+
+            <!-- <div class="btnbar">
+                <button type="submit" class="addForm">+ Create a New Form</button>
+            </div> -->
+        </div>
+    </div>
+    <script src="{{url_for('static',filename='js/formsapp.js')}}"></script>
+    <!-- <script src="../static/js/formsapp.js"></script> -->
+</body>
+</html>

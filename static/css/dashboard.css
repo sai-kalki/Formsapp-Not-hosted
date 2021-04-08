@@ -1,0 +1,397 @@
+
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: hotpink;
+    font-size: 30px;
+    -webkit-tap-highlight-color: transparent;
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.formsapp{  
+    width: 100%;
+    height: 100%;
+
+}
+
+.menu{
+    width: 360px;
+    height: 100vh;
+    top: 0;
+    /* display: none; */
+    position: fixed;
+}
+.nav-bar{
+    width:100%;
+    background-color: white;
+    height:100vh;
+    text-align: center;
+}
+.navbar-links a{
+    text-decoration: none;
+    color: hotpink;
+    font-family: 'Noto Sans HK', sans-serif;
+    left: 0;
+}
+.nav-logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    color:hotpink;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.nav-link{
+    font-size: 20px;
+    cursor: pointer;
+    list-style-type: none;
+    padding:30px;
+}
+
+.nav-link:hover{
+    background-color: hotpink;
+    color: white;
+}
+.nav-link:active{
+    background-color: white;
+    color: hotpink;
+    border: 1px solid hotpink;
+}
+
+
+@media only screen and (max-width: 1024px) {
+.menu{
+    width: 300px;
+} 
+}
+@media only screen and (max-width: 768px) {
+    .menu{
+        width: 260px;
+} 
+}
+@media only screen and (max-width: 600px) {
+    .menu{
+        display: none;
+} 
+}
+
+
+
+
+
+
+/***************************** Navbar Ends ***********************************/
+
+
+
+
+
+
+
+
+.content{
+    display: flex;
+    margin-left: 360px;
+    margin-top: 0;
+    padding-left: 1%;
+    padding-right: 1%;
+    flex-direction: column;
+    flex: 0 1 720px;
+    justify-content: flex-start;
+
+}
+.content .header {
+    display: flex;
+    flex: 1;
+    min-height: 8vh;
+    align-items: center;
+    justify-content: space-around;
+}
+.content .header .mob-nav-logo{
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding: 0px;
+    cursor: pointer;
+}
+.content .header .mob-nav-logo a{
+    color:white;
+    text-decoration: none;
+}
+.content .header .mob-nav-links{
+    display: flex;
+    width: 40%;
+    margin-top: 25px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.content .header .mob-nav-links li{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.content .header .mob-nav-links li a{
+    color: white;
+    font-size: large;
+}
+
+
+/* .content .header{
+    flex: 0 0 50px;
+
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.content .header .mob-nav-logo{
+font-family: 'Pacifico', cursive;
+font-size: 40px;
+margin-top: 0px;
+margin-bottom: 40px;
+color:white;
+padding: 10px;
+cursor: pointer;
+}
+.content .header .mob-nav-logo a{
+    color:white;
+    text-decoration: none;
+}
+.content .header .toggle-menu-bar{
+    margin-left: 85%;
+    margin-top: -23%;
+    position: relative;
+    margin-bottom: 20px;
+    
+}
+.content .header .toggle-menu-bar .toggle-menu{
+    width: 35px;
+    height: 5px;
+    background-color: white;
+     margin: 6px 0;
+}
+
+.content .header .mob-nav-link{
+    font-size: 20px;
+    cursor: pointer;
+    list-style-type: none;
+    padding:30px;
+}
+.mob-nav-link:hover{
+    background-color: white;
+    color: hotpink;
+}
+.mob-link:active{
+    background-color: hotpink;
+    color: white;
+    border: 1px solid white;
+}
+.content .mob-navbar-links{
+    display: none;
+}
+.content .mob-navbar-links a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    font-family: 'Noto Sans HK', sans-serif;
+    left: 0;
+    
+}
+.content .header .mob-nav-link-hide{
+    font-size: 30px;
+    cursor: pointer;
+    text-align: center; 
+    align-items: center;
+    padding: 10px;
+    display: none;
+
+    color: white;
+    margin-left: 45%;
+    margin-right: 45%;
+
+} */
+
+
+
+
+
+
+
+
+
+.content .form-content{
+    
+    flex: 6;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    flex-direction: column;
+    font-size: medium;
+}
+
+.content .form-content .form{
+    width: 100%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    height: auto;
+    min-height: 80pxz;
+    margin-top: 2%;
+    background-color: white;
+    text-align: center;
+    /* flex: 0 1 150px; */
+}
+.content .form-content .form .title{
+    text-transform: uppercase;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: black;
+    font-size: large;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+.content .form-content .form .title a{
+   color: black;
+}
+
+.content .form-content .form .formlink{
+    /* text-transform: uppercase; */
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-size: small;
+    font-family: 'Noto Sans HK', sans-serif;
+}
+.content .form-content .form .formlink:active{
+    color: hotpink;
+}
+.content .form-content .form .share-links{
+    margin-top: 1%;
+}
+.content .form-content .form .share-links a{
+    text-decoration: none;
+    color: hotpink;
+    font-size: x-large;
+}
+.content .form-content .form .title a i,.content .form-content .form .share-links a i{
+color:#fff;
+background-color:hotpink;
+width:30px;
+height:30px;
+line-height:30px;
+    font-size: 16px;
+border-radius:50%;
+text-align:center;
+transition:0.5s all;
+-webkit-transition:0.5s all;
+-moz-transition:0.5s all;
+-o-transition:0.5s all;
+    -webkit-border-radius:50%;
+-moz-border-radius:50%;
+-o-border-radius:50%;
+-ms-border-radius:50%;
+-ms-transition:0.5s all;
+}
+.content .form-content .form .title a i:hover,.content .form-content .form .share-links a i:hover {
+	background-color:darkmagenta;
+}
+.content .btnbar{
+    color: white;
+    
+    flex: 00 50px;
+    margin-top: auto;
+    
+}
+.btnbar button{
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-decoration: none;
+    background-color: transparent;
+    border: 3px solid white;
+    font-size: large;
+    font-family: 'Noto Sans HK', sans-serif;
+    outline: none;
+}
+/* .btnbar button:hover{
+    color: hotpink;
+    background-color: white;
+} */
+
+/* .btnbar button:active{
+    color: white;
+    background-color: hotpink;
+} */
+
+@media only screen and (max-width: 2500px) {
+    .content{
+        margin-left: 360px;  
+    } 
+    .content .header{
+        display: none;
+    } 
+}
+@media only screen and (max-width: 1440px) {
+    .content{
+        margin-left: 360px;  
+    } 
+    .content .header{
+        display: none;
+    } 
+    }
+@media only screen and (max-width: 1024px) {
+    .content{
+        margin-left: 300px;
+    } 
+    .content .header{
+        display: none;
+    } 
+    }
+@media only screen and (max-width: 768px) {
+    .content{
+            margin-left: 260px;
+} 
+.content .header{
+    display: none;
+} 
+}
+@media only screen and (max-width: 600px) {
+    .content{
+        margin-left: 0px;
+        
+} 
+.content .header{
+    display: flex;
+} 
+.content .form-content .form .title{
+
+    font-size: medium;
+}
+}
+
+
+
+
+@media(hover:hover){
+    .btnbar button:hover{
+        color: hotpink;
+        background-color: white;
+    }
+}
+
+@media(hover:none){
+    .btnbar button:hover{
+        color: white;
+        background-color: hotpink;
+    }
+    
+}
